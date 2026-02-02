@@ -20,10 +20,10 @@ A premium travel agency website featuring dynamic destinations, bookings, and in
     node server_local.js
     ```
 
-## ☁️ Deploy to Vercel
+## ☁️ Deploy to Netlify
 
-This project is designed to fall back to **Offline Mode** if the database is not available, making it perfect for static hosting on Vercel.
+This project is configured for **Zero-Install** static deployment on Netlify, ensuring a fast and warning-free build.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDataIsFuture23%2FSkyetravelsolutions)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/DataIsFuture23/Skyetravelsolutions)
 
-**Note:** The "Login" and "Book Now" features require a backend database and will not function in the static Vercel deployment. The "View Details" and destination gallery will work normally.
+**Note:** The "Login" and "Book Now" features require a backend database and will not function in this static deployment. The "View Details" and destination gallery will work normally via offline fallback.
