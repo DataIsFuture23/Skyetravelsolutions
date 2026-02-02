@@ -17,7 +17,7 @@ A premium travel agency website featuring dynamic destinations, bookings, and in
     ```
 3.  Start the server (requires SQL Server):
     ```bash
-    node server.js
+    node server_local.js
     ```
 
 ## ☁️ Deploy to Vercel
