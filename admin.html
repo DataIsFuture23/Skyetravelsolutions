@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Skye Travel</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Reuse Main Styles but add Admin Specifics -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetalert-theme.js"></script>
+    <style>
+        :root {
+            --admin-nav-width: 250px;
+            --admin-bg: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--admin-bg);
+            padding-left: var(--admin-nav-width);
+            padding-top: 0;
+        }
+
+        /* Sidebar */
+        .admin-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--admin-nav-width);
+            height: 100vh;
+            background-color: var(--first-color);
+            color: #fff;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+
+        .sidebar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sidebar-item {
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sidebar-item:hover,
+        .sidebar-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+        }
+
+        /* Main Content */
+        .admin-main {
+            padding: 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(37, 211, 102, 0.1);
+            color: var(--first-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .stat-info h3 {
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+
+        .stat-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Tables & Forms */
+        .admin-section {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2rem;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .admin-section.active-section {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            /* Spacing between rows */
+            margin-top: 1rem;
+        }
+
+        th {
+            color: var(--text-color-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        td {
+            background: white;
+            padding: 1rem;
+            border-top: 1px solid #f9f9f9;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        tr:hover td {
+            background: #fafafa;
+            transform: scale(1.005);
+            transition: 0.2s;
+        }
+
+        /* Form */
+        .add-dest-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--first-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+        }
+
+        .btn {
+            border-radius: 8px;
+            /* Rounded buttons */
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="admin-sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-plane"></i> SkyeAdmin
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active" onclick="showSection('dashboard')">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </li>
+            <li class="sidebar-item" onclick="showSection('bookings')">
+                <i class="fas fa-calendar-check"></i> Bookings
+            </li>
+            <li class="sidebar-item" onclick="showSection('destinations')">
+                <i class="fas fa-map-marked-alt"></i> Destinations
+            </li>
+            <li class="sidebar-item" onclick="showSection('messages')">
+                <i class="fas fa-envelope"></i> Messages
+            </li>
+            <li class="sidebar-item" onclick="showSection('leads')">
+                <i class="fas fa-user-plus"></i> Leads (Wizard)
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="sidebar-item" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h2 id="page-title">Dashboard Overview</h2>
+                <p>Welcome back, Admin</p>
+            </div>
+            <div class="admin-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=0D3B66&color=fff"
+                    style="border-radius: 50%; width: 40px;">
+            </div>
+        </header>
+
+        <!-- DASHBOARD SECTION -->
+        <div id="dashboard" class="admin-section active-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-bookings">0</h3>
+                        <p>Total Bookings</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-destinations">0</h3>
+                        <p>Active Destinations</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                    <div class="stat-info">
+                        <h3>₹0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Bookings Preview -->
+            <h3>Recent Activity</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="preview-table">
+                    <!-- JS Injected -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BOOKINGS SECTION -->
+        <div id="bookings" class="admin-section">
+            <h3>All Bookings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-table">
+                    <!-- JS Injected -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- MANAGE DESTINATIONS SECTION -->
+        <div id="destinations" class="admin-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3>Manage Destinations</h3>
+                <button class="btn btn-primary" onclick="toggleDestForm()">+ Add New</button>
+            </div>
+
+            <!-- Destination List Table -->
+            <div id="dest-list-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="destinations-table">
+                        <!-- JS Injected -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add/Edit Form (Hidden by default) -->
+            <div id="dest-form-container"
+                style="display: none; margin-top: 2rem; border-top: 1px solid #eee; padding-top: 2rem;">
+                <h3 id="form-title">Add New Destination</h3>
+                <form id="add-dest-form" class="add-dest-form">
+                    <input type="hidden" id="d-id"> <!-- Hidden ID for edits -->
+
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="d-title" required placeholder="e.g. Kyoto, Japan">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="d-category" style="padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                            <option value="General">General</option>
+                            <option value="Beach">Beach</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="City">City</option>
+                            <option value="Cruises">Cruises</option>
+                            <option value="Hiking">Hiking</option>
+                            <option value="Wildlife">Wildlife</option>
+                            <option value="Walking">Walking</option>
+                            <option value="Luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" id="d-price" required placeholder="e.g. ₹1,50,000">
+                    </div>
+                    <div class="form-group">
+                        <label>Rating (1-5)</label>
+                        <input type="number" id="d-rating" step="0.1" max="5" required>
+                    </div>
+                    <div class="form-group" style="grid-column: 1/-1;">
+                        <label>Image URL</label>
+                        <input type="text" id="d-image" required placeholder="https://...">
+                    </div>
+                    <div class="form-group" style="grid-column: 1/-1;">
+                        <label>Description</label>
+                        <textarea id="d-desc" rows="3"
+                            style="padding: 10px; border: 1px solid #ddd; width: 100%;"></textarea>
+                    </div>
+                    <div class="form-group" style="grid-column: 1/-1;">
+                        <label>Cultural Info</label>
+                        <textarea id="d-culture" rows="3"
+                            style="padding: 10px; border: 1px solid #ddd; width: 100%;"></textarea>
+                    </div>
+                    <div style="grid-column: 1/-1; display: flex; gap: 10px;">
+                        <button type="submit" class="btn btn-primary" id="btn-save-dest">Save Destination</button>
+                        <button type="button" class="btn btn-secondary" onclick="toggleDestForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Messages Section -->
+        <div id="messages" class="admin-section">
+            <h3>Recent Inquiries</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="messages-table">
+                    <!-- JS Populated -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Leads (Smart Wizard) Section -->
+        <div id="leads" class="admin-section">
+            <h3>Captured Leads (Plan My Trip)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Vibe</th>
+                        <th>Budget</th>
+                        <th>Link</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="leads-table">
+                    <!-- JS Populated -->
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        const API_BASE = (window.location.protocol === 'file:' || window.location.port !== '3000') ? 'http://localhost:3000' : '';
+
+        // --- OFFLINE / DEMO DATA (For Netlify/GoDaddy) ---
+        const OFFLINE_DESTINATIONS = [
+            { id: 1, title: 'Taj Mahal, India', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-1.2.1', price: '₹15,000', rating: 4.9, category: 'Heritage', description: 'Ivory-white marble mausoleum.', culture: 'Mughal Architecture' },
+            { id: 2, title: 'Goa Beaches, India', image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-1.2.1', price: '₹20,000', rating: 4.7, category: 'Beaches', description: 'Beautiful beaches and nightlife.', culture: 'Portuguese Heritage' },
+            { id: 35, title: 'Machu Picchu, Peru', image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-1.2.1', price: '₹95,000', rating: 4.9, category: 'Hiking', description: 'Ancient Incan citadel.', culture: 'Incan History' },
+            { id: 27, title: 'Dubai, UAE', image: 'https://images.unsplash.com/photo-1512453979798-5ea904ac66de?ixlib=rb-1.2.1', price: '₹85,000', rating: 4.6, category: 'Luxury', description: 'Futuristic architecture.', culture: 'Modern Luxury' }
+        ];
+
+        const MOCK_BOOKINGS = [
+            { id: 101, name: "Alice Explorer", email: "alice@example.com", phone: "123-456-7890", destination: "Bora Bora, French Polynesia", date: new Date().toISOString() },
+            { id: 102, name: "Bob Trekker", email: "bob@example.com", phone: "987-654-3210", destination: "Machu Picchu, Peru", date: new Date().toISOString() }
+        ];
+
+        const MOCK_MESSAGES = [
+            { id: 1, name: "John Doe", email: "john@test.com", phone: "555-5555", message: "Do you have family packages?", date: new Date().toISOString() }
+        ];
+
+        const MOCK_LEADS = [
+            { id: 1, name: "Sara Vibe", vibe: "Luxury", budget: "Premium", whatsapp_url: "#", date: new Date().toISOString() }
+        ];
+
+        // Check for Demo Mode flag (set by login page failure)
+        const isDemoMode = localStorage.getItem('demo_mode') === 'true';
+
+
+        // Security Check
+        const token = localStorage.getItem('token');
+        if (!token && !isDemoMode) {
+            window.location.href = 'index.html';
+        }
+
+        if (isDemoMode) {
+            SkyeToast.fire({
+                icon: 'info',
+                title: 'Demo Mode Active',
+                text: 'Running in offline demo mode.'
+            });
+        }
+
+        // Navigation Logic
+        function showSection(id) {
+            document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(id).classList.add('active-section');
+
+            document.getElementById('page-title').textContent = id.charAt(0).toUpperCase() + id.slice(1);
+        }
+
+        async function loadDashboard() {
+            try {
+                // Fetch Bookings
+                let bookings = [];
+                try {
+                    const res = await fetch(`${API_BASE}/api/admin/bookings`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (res.status === 403) throw new Error("403");
+                    if (!res.ok) throw new Error("Network");
+                    bookings = await res.json();
+                } catch (e) {
+                    // Fallback
+                    console.warn("Using Mock Bookings");
+                    bookings = MOCK_BOOKINGS;
+                }
+
+                // Update Stats
+                document.getElementById('stat-bookings').textContent = bookings.length;
+                document.getElementById('stat-destinations').textContent = await countDestinations();
+
+                // Populate Tables
+                const tbody = document.getElementById('bookings-table');
+                const preview = document.getElementById('preview-table');
+
+                tbody.innerHTML = '';
+                preview.innerHTML = '';
+
+                bookings.forEach((b, index) => {
+                    const row = `<tr>
+                        <td>#${b.id}</td>
+                        <td>${b.name}</td>
+                        <td>${b.email}</td>
+                        <td>${b.phone}</td>
+                        <td>${b.destination}</td>
+                        <td>${new Date(b.date).toLocaleDateString()}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+
+                    if (index < 5) {
+                        preview.innerHTML += `<tr>
+                            <td>${b.name}</td>
+                            <td>${b.destination}</td>
+                            <td>${new Date(b.date).toLocaleDateString()}</td>
+                        </tr>`;
+                    }
+                });
+
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        async function countDestinations() {
+            try {
+                const res = await fetch(`${API_BASE}/api/destinations`);
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                return data.length;
+            } catch (e) { return OFFLINE_DESTINATIONS.length; }
+        }
+
+        // --- DESTINATION MANAGEMENT ---
+        let allDestinations = [];
+
+        async function loadDestinations() {
+            try {
+                try {
+                    const res = await fetch(`${API_BASE}/api/destinations`);
+                    if (!res.ok) throw new Error("Net");
+                    allDestinations = await res.json();
+                } catch (e) {
+                    console.warn("Using Offline Destinations");
+                    // Try LocalStorage first (for edits)
+                    const local = localStorage.getItem('offline_dests');
+                    allDestinations = local ? JSON.parse(local) : OFFLINE_DESTINATIONS;
+                }
+
+                const tbody = document.getElementById('destinations-table');
+                tbody.innerHTML = '';
+
+                allDestinations.forEach(d => {
+                    const row = `<tr>
+                        <td><img src="${d.image}" style="width: 50px; height: 30px; object-fit: cover; border-radius: 4px;"></td>
+                        <td>${d.title}</td>
+                        <td>${d.category}</td>
+                        <td>${d.price}</td>
+                        <td>
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem; background: #f39c12;" onclick="editDestination(${d.id})"><i class="fas fa-edit"></i></button>
+                            <button class="btn" style="padding: 5px 10px; font-size: 0.8rem; background: #e74c3c; margin-left: 5px;" onclick="deleteDestination(${d.id})"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+
+                // Update Sidebar Count if needed (optional)
+                document.getElementById('stat-destinations').textContent = allDestinations.length;
+
+            } catch (err) {
+                console.error("Error loading destinations:", err);
+            }
+        }
+
+        function toggleDestForm(show = null) {
+            const formContainer = document.getElementById('dest-form-container');
+            const listContainer = document.getElementById('dest-list-container');
+
+            if (show === true || (show === null && formContainer.style.display === 'none')) {
+                // Show Form
+                formContainer.style.display = 'block';
+                listContainer.style.display = 'none';
+            } else {
+                // Hide Form (Show List)
+                formContainer.style.display = 'none';
+                listContainer.style.display = 'block';
+                document.getElementById('add-dest-form').reset();
+                document.getElementById('d-id').value = ''; // Clear ID
+                document.getElementById('form-title').textContent = 'Add New Destination';
+                document.getElementById('btn-save-dest').textContent = 'Save Destination';
+            }
+        }
+
+        function editDestination(id) {
+            const dest = allDestinations.find(d => d.id === id);
+            if (!dest) return;
+
+            // Populate Form
+            document.getElementById('d-id').value = dest.id;
+            document.getElementById('d-title').value = dest.title;
+            document.getElementById('d-category').value = dest.category;
+            document.getElementById('d-price').value = dest.price;
+            document.getElementById('d-rating').value = dest.rating;
+            document.getElementById('d-image').value = dest.image;
+            document.getElementById('d-desc').value = dest.description;
+            // Culture might be undefined in JSON if not standard, handle safely
+            document.getElementById('d-culture').value = dest.culture || '';
+
+            // Switching Info
+            document.getElementById('form-title').textContent = 'Edit Destination';
+            document.getElementById('btn-save-dest').textContent = 'Update Destination';
+
+            toggleDestForm(true);
+        }
+
+        async function deleteDestination(id) {
+            if (!confirm("Are you sure you want to delete this destination?")) return;
+
+            try {
+                const res = await fetch(`${API_BASE}/api/admin/destinations/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.ok) {
+                    SkyeAlert.fire({ icon: 'success', title: 'Deleted!', text: 'Destination has been deleted.' });
+                    loadDestinations();
+                } else { throw new Error("API Fail"); }
+            } catch (err) {
+                // FALLBACK
+                if (isDemoMode || !API_BASE) {
+                    // Filter out
+                    allDestinations = allDestinations.filter(d => d.id !== id);
+                    localStorage.setItem('offline_dests', JSON.stringify(allDestinations));
+                    SkyeAlert.fire({ icon: 'success', title: 'Deleted (Demo)', text: 'Destination deleted locally.' });
+                    loadDestinations();
+                    return;
+                }
+                console.error(err);
+                SkyeAlert.fire({ icon: 'error', title: 'Error', text: 'Error deleting.' });
+            }
+        }
+
+        // Unified Form Submit (Add or Edit)
+        document.getElementById('add-dest-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const id = document.getElementById('d-id').value;
+            const isEdit = !!id;
+
+            const data = {
+                title: document.getElementById('d-title').value,
+                category: document.getElementById('d-category').value,
+                price: document.getElementById('d-price').value,
+                rating: document.getElementById('d-rating').value,
+                image: document.getElementById('d-image').value,
+                description: document.getElementById('d-desc').value,
+                culture: document.getElementById('d-culture').value
+            };
+
+            const url = isEdit ? `${API_BASE}/api/admin/destinations/${id}` : `${API_BASE}/api/admin/destinations`;
+            const method = isEdit ? 'PUT' : 'POST';
+
+            try {
+                const res = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    SkyeAlert.fire({ icon: 'success', title: 'Success', text: isEdit ? 'Destination Updated!' : 'Destination Added!' });
+                    toggleDestForm(false);
+                    loadDestinations();
+                } else { throw new Error(res.statusText); }
+            } catch (err) {
+                if (isDemoMode || !API_BASE) {
+                    // Update Local Data
+                    if (isEdit) {
+                        const idx = allDestinations.findIndex(d => d.id == id);
+                        if (idx !== -1) allDestinations[idx] = { ...allDestinations[idx], ...data, id: parseInt(id) };
+                    } else {
+                        const newId = Date.now(); // Simple ID
+                        allDestinations.push({ ...data, id: newId });
+                    }
+                    localStorage.setItem('offline_dests', JSON.stringify(allDestinations));
+                    SkyeAlert.fire({ icon: 'success', title: 'Saved (Demo)', text: 'Changes saved locally.' });
+                    toggleDestForm(false);
+                    loadDestinations();
+                    return;
+                }
+
+                console.error(err);
+                SkyeAlert.fire({ icon: 'error', title: 'Error', text: 'Error submitting form: ' + err.message });
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+
+        // Messages Logic
+        async function loadMessages() {
+            try {
+                let messages = [];
+                try {
+                    const res = await fetch(`${API_BASE}/api/admin/contacts`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (!res.ok) throw new Error();
+                    messages = await res.json();
+                } catch (e) { messages = MOCK_MESSAGES; }
+
+                const tbody = document.getElementById('messages-table');
+                tbody.innerHTML = '';
+
+                messages.forEach(m => {
+                    const row = `<tr>
+                        <td>#${m.id}</td>
+                        <td>${m.name}</td>
+                        <td>${m.email}</td>
+                        <td>${m.phone}</td>
+                        <td>${m.message}</td>
+                        <td>${new Date(m.date).toLocaleDateString()}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+            } catch (err) {
+                console.error('Error loading messages:', err);
+            }
+        }
+
+        // Leads Logic
+        async function loadLeads() {
+            try {
+                let leads = [];
+                try {
+                    const res = await fetch(`${API_BASE}/api/admin/leads`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (!res.ok) throw new Error();
+                    leads = await res.json();
+                } catch (e) { leads = MOCK_LEADS; }
+
+                if (!Array.isArray(leads)) leads = [];
+
+                const tbody = document.getElementById('leads-table');
+                tbody.innerHTML = '';
+
+                if (leads.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;">No leads found.</td></tr>';
+                    return;
+                }
+
+                leads.forEach(l => {
+                    const row = `<tr>
+                        <td>#${l.id}</td>
+                        <td>${l.name}</td>
+                        <td>${l.vibe}</td>
+                        <td>${l.budget}</td>
+                        <td><a href="${l.whatsapp_url}" target="_blank">Open Chat</a></td>
+                        <td>${new Date(l.date).toLocaleDateString()}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+            } catch (err) {
+                console.error('Error loading leads:', err);
+                const tbody = document.getElementById('leads-table');
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:red;">
+                    Error loading leads: ${err.message}
+                </td></tr>`;
+            }
+        }
+
+        // Init
+        loadDashboard();
+        loadMessages();
+        loadLeads();
+        loadDestinations();
+    </script>
+</body>
+
+</html>

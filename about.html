@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Skye Travel Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 3.5rem;
+            /* Header height */
+        }
+
+        .about-section {
+            padding: 4rem 0;
+        }
+
+        .vision-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--first-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Skye<span class="logo-accent">Travel</span> Solutions.</a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active-link">About us</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Our Service</a></li>
+                    <li class="nav-item"><a href="index.html#destinations" class="nav-link">Destinations</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="#" class="btn btn-primary nav-btn-book"
+                            onclick="openBooking('General Inquiry'); return false;"
+                            style="padding: 0.75rem 1.5rem; color: #fff;">Tour Booking Now</a></li>
+                </ul>
+                <div class="nav-close" id="nav-close"><i class="ph ph-x"></i></div>
+            </nav>
+
+            <div class="nav-btns">
+                <div class="nav-toggle" id="nav-toggle"><i class="ph ph-list"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div>
+            <h1 class="home-title" style="font-size: 3rem;">About Us</h1>
+            <p class="home-description" style="max-width: 600px; margin: 0 auto;">Simplifying and elevating travel
+                experiences.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="section about-section bg-pattern-dot">
+            <div class="container">
+                <h2 class="section-title">World-Class Travel Management</h2>
+                <div
+                    style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: var(--text-color-light); text-align: center;">
+                    <p style="margin-bottom: 1rem; font-size: 1.1rem;">
+                        Skye Travel Solutions is a modern travel management company dedicated to simplifying and
+                        elevating
+                        travel experiences for individuals, groups, and corporate clients. With a strong focus on
+                        customer
+                        satisfaction, digital innovation, and cost-effective planning, we deliver end-to-end travel
+                        solutions that meet the diverse needs of today’s travelers.
+                    </p>
+                    <p style="font-size: 1.1rem;">
+                        From bespoke holiday packages to comprehensive corporate travel programs, Skye Travel Solutions
+                        strives to make every journey seamless, memorable, and value-driven.
+                    </p>
+                </div>
+
+                <div class="destinations-grid" style="margin-top: 4rem;">
+                    <div class="category-card">
+                        <i class="ph ph-star"></i>
+                        <h3>Exclusive Trips</h3>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-color);">Carefully curated
+                            travel
+                            experiences designed for comfort, value, and unforgettable journeys.</p>
+                    </div>
+                    <div class="category-card">
+                        <i class="ph ph-shield-check"></i>
+                        <h3>Safety First</h3>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-color);">Trusted travel
+                            planning
+                            with reliable partners, secure bookings, and complete peace of mind.</p>
+                    </div>
+                    <div class="category-card">
+                        <i class="ph ph-user-circle"></i>
+                        <h3>Expert Guides</h3>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-color);">Experienced travel
+                            experts
+                            providing personalized guidance from planning to return.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container founder-section">
+            <div class="about-container"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
+                <div class="about-data">
+                    <span
+                        style="color: var(--first-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Founder's
+                        Message</span>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Aniket Gupta</h2>
+                    <p
+                        style="margin-bottom: 2rem; color: var(--text-color-light); font-style: italic; border-left: 3px solid var(--first-color); padding-left: 1rem;">
+                        "To provide reliable, personalized, and innovative travel services that empower travelers to
+                        explore the world with confidence and ease. We aim to be a trusted industry leader known for
+                        exceptional service, advanced travel
+                        solutions, and lasting client relationships."
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Work With Us</a>
+                </div>
+                <div class="vision-wrapper" style="display: grid; gap: 2rem;">
+                    <div class="category-card" style="text-align: left; padding: 2.5rem;">
+                        <h3 class="card-title"
+                            style="color: var(--first-color); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                            <i class="ph ph-eye" style="margin:0; font-size: 1.5rem;"></i> Our Vision
+                        </h3>
+                        <p style="color: var(--text-color);">Strengthen partnerships with global travel providers.
+                            Increase digital presence and
+                            automation of travel processes to achieve market leadership.</p>
+                    </div>
+                    <div class="category-card" style="text-align: left; padding: 2.5rem;">
+                        <h3 class="card-title"
+                            style="color: var(--first-color); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                            <i class="ph ph-handshake" style="margin:0; font-size: 1.5rem;"></i> Our Commitment
+                        </h3>
+                        <p style="color: var(--text-color);">Innovation ensures accuracy, efficiency, and convenience
+                            for every client. We are committed
+                            to expanding our service portfolio across new regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">Skye<span class="logo-accent">Travel</span> Solutions.</a>
+                <p class="footer-description">Your premium gateway to the world's most beautiful destinations.</p>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Our Service</a></li>
+                    <li><a href="contact.html">Tour Booking Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Address</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@skyetravelsolutions.com">info@skyetravelsolutions.com</a></li>
+                    <li>+91 86558 74294</li>
+                    <li>Mira Road East, Thane, India</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="footer-socials">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © Copyright © 2025 SKYE TRAVEL SOLUTIONS All Right Reserved. | Made With By e2s infotech - Web Designers in
+            Mumbai.
+        </div>
+    </footer>
+
+    <!-- Booking Modal (Shared) -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Book your Trip to <span id="modal-destination-name"></span></h3>
+                <button class="modal-close" id="modal-close"><i class="ph ph-x"></i></button>
+            </div>
+            <form class="modal-form" id="booking-form">
+                <div class="form-group">
+                    <label for="book-name">Full Name</label>
+                    <input type="text" id="book-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-email">Email Address</label>
+                    <input type="email" id="book-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-phone">Phone Number</label>
+                    <input type="tel" id="book-phone" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Confirm Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Sarah Jenkins",
+        "vibe": "Relaxed & Chill",
+        "budget": "₹1,50,000 - ₹3,00,000",
+        "whatsapp_url": "https://wa.me/1234567890?text=Hi%20Sarah,%20saw%20your%20inquiry%20for%20a%20Relaxed%20trip!"
+    },
+    {
+        "name": "Mike Ross",
+        "vibe": "Adventure & Thrill",
+        "budget": "₹3,00,000+",
+        "whatsapp_url": "https://wa.me/1234567891?text=Hi%20Mike,%20ready%20for%20an%20adventure?"
+    },
+    {
+        "name": "Emily Blunt",
+        "vibe": "Cultural Immersion",
+        "budget": "₹80,000 - ₹1,50,000",
+        "whatsapp_url": "https://wa.me/1234567892?text=Hi%20Emily,%20let's%20plan%20your%20cultural%20trip."
+    },
+    {
+        "name": "John Doe",
+        "vibe": "Party & Nightlife",
+        "budget": "₹1,50,000 - ₹3,00,000",
+        "whatsapp_url": "https://wa.me/1234567893?text=Hi%20John,%20ready%20to%20party?"
+    },
+    {
+        "name": "Jessica Pearson",
+        "vibe": "Luxury & Comfort",
+        "budget": "₹3,00,000+",
+        "whatsapp_url": "https://wa.me/1234567894?text=Hi%20Jessica,%20we%20have%20some%20luxury%20options%20for%20you."
+    }
+]

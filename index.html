@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skye Travel Solution | Find Your Next Adventure</title>
+    <meta name="description"
+        content="Premium travel agency offering curated experiences and luxury destinations. Book your dream vacation today with Skye Travel Solution.">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d3b66">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (Phosphor Icons for a premium look) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Leaflet Map CSS (CDNJS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+    <!-- Leaflet Map JS (CDNJS) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+        integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetalert-theme.js"></script>
+    <!-- Ensure Map tiles render correctly -->
+    <style>
+        .leaflet-container {
+            font-family: inherit;
+            z-index: 1;
+            /* Fix basic stacking */
+        }
+
+        /* Fix for broken tiles in some browsers */
+        .leaflet-tile {
+            border: none !important;
+            max-width: none !important;
+            max-height: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Skye<span class="logo-accent">Travel</span>.</a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Our Service</a></li>
+                    <li class="nav-item"><a href="#destinations" class="nav-link">Destinations</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item" id="nav-login-item">
+                        <a href="#" class="nav-link" onclick="openLogin(); return false;">
+                            <i class="ph ph-user-circle" style="font-size: 1.2rem; vertical-align: middle;"></i> Login
+                        </a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="btn btn-primary nav-btn-book"
+                            onclick="openBooking('General Inquiry'); return false;"
+                            style="padding: 0.75rem 1.5rem; color: #fff;">Tour Booking Now</a></li>
+                </ul>
+                <div class="nav-close" id="nav-close">
+                    <i class="ph ph-x"></i>
+                </div>
+            </nav>
+
+            <div class="nav-btns" style="display: flex; align-items: center; gap: 1rem;">
+                <!-- Theme Change Button -->
+                <i class="ph ph-moon change-theme" id="theme-button"
+                    style="font-size: 1.25rem; color: var(--title-color); cursor: pointer;"></i>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="ph ph-list"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section class="home" id="home">
+            <div class="home-bg-overlay"></div>
+            <!-- Placeholder for hero image - using a high quality Unsplash URL for now -->
+            <!-- Video Background -->
+            <!-- Video Background Playlist -->
+            <div class="home-img-container" id="hero-video-container">
+                <video autoplay muted playsinline class="hero-video active" id="hero-video-1"
+                    poster="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1">
+                    <source src="media/hero.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline class="hero-video" id="hero-video-2">
+                    <!-- Source will be loaded dynamically -->
+                </video>
+            </div>
+
+            <div class="container home-container">
+                <div class="home-data">
+                    <span class="home-subtitle" style="color: #fff;">Premium Travel Experiences</span>
+                    <h1 class="home-title">Curated Journeys <br> Beyond Expectation</h1>
+                    <p class="home-description">
+                        We craft exclusive itineraries for the discerning traveler. Discover the world's most
+                        breathtaking destinations with Skye Travel.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary top-btn" onclick="window.openWizard(); return false;">
+                            Plan My Trip ✨
+                        </a>
+                        <a href="#" class="btn btn-secondary"
+                            onclick="window.openBooking('General Inquiry'); return false;"
+                            style="border-color: #fff; color: #fff;">
+                            Book Now
+                        </a>
+                        <a href="#" class="btn btn-secondary"
+                            onclick="window.openBooking('General Inquiry', true); return false;"
+                            style="border-color: #fff; color: #fff;">
+                            Talk to an Expert
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Search/Filter Box -->
+                <div class="search-box reveal-up">
+                    <form action="" class="search-form">
+                        <div class="search-item">
+                            <label for="location">Location</label>
+                            <div class="input-wrapper">
+                                <i class="ph ph-map-pin"></i>
+                                <input type="text" id="location" placeholder="Where are you going?">
+                            </div>
+                        </div>
+                        <div class="search-item">
+                            <label for="date">Date</label>
+                            <div class="input-wrapper">
+                                <i class="ph ph-calendar-blank"></i>
+                                <input type="date" id="date">
+                            </div>
+                        </div>
+                        <div class="search-item">
+                            <label for="guests">Guests</label>
+                            <div class="input-wrapper">
+                                <i class="ph ph-users"></i>
+                                <input type="number" id="guests" placeholder="Add guests" min="1">
+                            </div>
+                        </div>
+                        <div class="search-btn-wrapper">
+                            <button class="btn btn-primary btn-search">
+                                <i class="ph ph-magnifying-glass" style="margin-right: 0.5rem;"></i> Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== TOUR CATEGORIES ====================-->
+        <section class="section container reveal-up" id="categories">
+            <div class="section-header">
+                <h2 class="section-title">Tour Categories</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- 3D Category Carousel -->
+            <div class="categories-3d-container">
+                <!-- Category 1: Cruises -->
+                <div class="category-card-3d" onclick="filterCategory('Cruises')">
+                    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        alt="Cruises">
+                    <div class="cat-3d-content">
+                        <h3>Cruises</h3>
+                    </div>
+                </div>
+
+                <!-- Category 2: Hiking -->
+                <div class="category-card-3d" onclick="filterCategory('Hiking')">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        alt="Hiking">
+                    <div class="cat-3d-content">
+                        <h3>Hiking</h3>
+                    </div>
+                </div>
+
+                <!-- Category 3: Airbirds (Luxury) -->
+                <div class="category-card-3d center-card" onclick="filterCategory('Luxury')">
+                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        alt="Luxury/Airbirds">
+                    <div class="cat-3d-content">
+                        <h3>Airbirds</h3>
+                    </div>
+                </div>
+
+                <!-- Category 4: Wildlife -->
+                <div class="category-card-3d" onclick="filterCategory('Wildlife')">
+                    <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        alt="Wildlife">
+                    <div class="cat-3d-content">
+                        <h3>Wildlife</h3>
+                    </div>
+                </div>
+
+                <!-- Category 5: Walking -->
+                <div class="category-card-3d" onclick="filterCategory('Walking')">
+                    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        alt="Walking">
+                    <div class="cat-3d-content">
+                        <h3>Walking</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Destinations -->
+        <section class="section destinations" id="destinations">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Popular Destination</h2>
+                    <p class="section-subtitle">Explore beauty of the whole world</p>
+                </div>
+
+                <div class="destinations-grid" id="destinations-grid">
+                    <!-- Destinations will be loaded here dynamically -->
+                    <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                        <div class="loader" style="font-size: 2rem; margin-bottom: 1rem;">⌛</div>
+                        <h3>Connecting to Database...</h3>
+                        <p>Please ensure the backend server is running.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== INTERACTIVE MAP ====================-->
+        <section class="section container" id="map-section">
+            <div class="section-header">
+                <h2 class="section-title">Explore the World</h2>
+                <p class="section-subtitle">Visualize your next adventure</p>
+            </div>
+            <div id="world-map"
+                style="height: 500px; width: 100%; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden;">
+            </div>
+        </section>
+
+        <!--==================== PLAN YOUR TRIP (ABOUT) ====================-->
+        <section class="section container" id="about">
+            <div class="about-container"
+                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; align-items: center;">
+                <!-- Text -->
+                <div class="about-data">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Plan Your Trip With us
+                    </h2>
+                    <p class="about-description" style="margin-bottom: 1.5rem; color: var(--text-color-light);">
+                        Skye Travel Solutions is a modern travel management company dedicated to simplifying and
+                        elevating travel experiences for individuals, groups, and corporate clients.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature" style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1.2rem; color: var(--title-color); margin-bottom: 0.5rem
+                            ;">Exclusive
+                                Trip</h3>
+                            <p style="color: var(--text-color-light);">Carefully curated travel experiences designed for
+                                comfort, value, and unforgettable journeys.</p>
+                        </div>
+                        <div class="about-feature">
+                            <h3 style="font-size: 1.2rem; color: var(--title-color); margin-bottom: 0.5rem;">Expert
+                                Planning</h3>
+                            <p style="color: var(--text-color-light);">Experienced travel experts ensuring seamless
+                                planning and hassle-free travel experiences.</p>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn" style="margin-top: 2rem;">Learn More</a>
+                </div>
+
+                <!-- Image -->
+                <div class="about-img-wrapper" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop"
+                        alt="Travel" style="border-radius: 1rem; width: 100%;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Client Say About us</h2>
+                    <p class="section-subtitle">Real experiences</p>
+                </div>
+                <div class="destinations-grid">
+                    <div class="destination-card" style="padding: 2rem;">
+                        <div style="font-size: 1.5rem; color: var(--first-color); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-quotes"></i></div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem;">“A travel partner that perfectly blends
+                            professionalism with care until I discovered Skye Travel Solutions. From the moment I
+                            planned my journey, I knew I was in expert hands. The commitment to seamless and reliable
+                            travel truly stands out.”</p>
+                        <h4 style="color: var(--title-color);">Maria</h4>
+                    </div>
+                    <div class="destination-card" style="padding: 2rem;">
+                        <div style="font-size: 1.5rem; color: var(--first-color); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-quotes"></i></div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem;">“A travel experience that balances comfort
+                            and efficiency until I chose Skye Travel Solutions. From the first interaction, their team
+                            made everything effortless. The dedication to customer satisfaction and smooth planning is
+                            truly impressive.”</p>
+                        <h4 style="color: var(--title-color);">Ram Yadav</h4>
+                    </div>
+                    <div class="destination-card" style="padding: 2rem;">
+                        <div style="font-size: 1.5rem; color: var(--first-color); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-quotes"></i></div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem;">“A service that combines great value with
+                            trusted expertise until I worked with Skye Travel Solutions. From booking to travel
+                            completion, everything felt well-managed. Their focus on detail and traveler comfort makes a
+                            real difference.”</p>
+                        <h4 style="color: var(--title-color);">Radhika</h4>
+                    </div>
+                    <div class="destination-card" style="padding: 2rem;">
+                        <div style="font-size: 1.5rem; color: var(--first-color); margin-bottom: 1rem;"><i
+                                class="ph-fill ph-quotes"></i></div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem;">“A travel company that delivers confidence
+                            and convenience until I found Skye Travel Solutions. From the very beginning, their support
+                            was prompt and professional. The commitment to quality service is clearly reflected in every
+                            step.”</p>
+                        <h4 style="color: var(--title-color);">Kishor Kumar</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="section cta">
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready for an adventure?</h2>
+                    <p class="cta-description">Join our newsletter to receive exclusive offers and travel inspiration.
+                    </p>
+                </div>
+                <!-- <form class="cta-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form> -->
+                <a href="#contact" class="btn btn-secondary">Contact Us Now</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="section newsletter">
+        <div class="container newsletter-container">
+            <h2 class="section-title">Join Our Exclusive Club</h2>
+            <p class="section-subtitle">Subscribe for latest luxury travel offers and hidden gems.</p>
+
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Your email address" required class="newsletter-input">
+                <button type="submit" class="btn btn-primary">Subscribe <i class="ph ph-paper-plane-right"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">Skye<span class="logo-accent">Travel</span> Solutions.</a>
+                <p class="footer-description">
+                    Your premium gateway to the world's most beautiful destinations.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Our Service</a></li>
+                    <li><a href="contact.html">Tour Booking Now</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Address</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@skyetravelsolutions.com">info@skyetravelsolutions.com</a></li>
+                    <li>+91 86558 74294</li>
+                    <li>Mira Road East, Thane, India</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="footer-socials">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © Copyright © 2025 SKYE TRAVEL SOLUTIONS All Right Reserved. | Made With By e2s infotech - Web Designers in
+            Mumbai.
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="ph ph-credit-card"></i> Secure Checkout</h3>
+                <button class="modal-close" id="payment-close"><i class="ph ph-x"></i></button>
+            </div>
+
+            <div class="payment-summary"
+                style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <p style="display: flex; justify-content: space-between;"><strong>Total:</strong> <span id="pay-amount"
+                        style="color: var(--first-color); font-size: 1.2rem;">₹0</span></p>
+            </div>
+
+            <form id="payment-form" class="modal-form">
+                <input type="hidden" id="pay-booking-id">
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required
+                        style="letter-spacing: 2px;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Expiry</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="password" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Name on Card</label>
+                    <input type="text" placeholder="JOHN DOE" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="btn-pay">
+                    Pay Now <i class="ph ph-lock-key"></i>
+                </button>
+            </form>
+            <div id="payment-feedback" style="text-align: center; margin-top: 10px; display: none;">
+                <i class="ph ph-spinner ph-spin" style="font-size: 2rem; color: var(--first-color);"></i>
+                <p>Processing...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modals -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Welcome Back</h3>
+                <button class="modal-close" onclick="closeAuthModals()"><i class="ph ph-x"></i></button>
+            </div>
+            <form class="modal-form" id="login-form">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                    Don't have an account? <a href="#" onclick="switchModal('register')"
+                        style="color: var(--first-color); font-weight: 600;">Register</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="register-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Create Account</h3>
+                <button class="modal-close" onclick="closeAuthModals()"><i class="ph ph-x"></i></button>
+            </div>
+            <form class="modal-form" id="register-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                    Already have an account? <a href="#" onclick="switchModal('login')"
+                        style="color: var(--first-color); font-weight: 600;">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Book your Trip to <span id="modal-destination-name"></span></h3>
+                <button class="modal-close" id="modal-close"><i class="ph ph-x"></i></button>
+            </div>
+            <h2 class="modal-title" id="booking-modal-title">Book your Trip to <span id="modal-destination-name"></span>
+            </h2>
+            <form class="modal-form" id="booking-form">
+                <input type="hidden" id="book-destination"> <!-- Hidden field to store final destination -->
+
+                <!-- Destination Select (Visible only for General Inquiry) -->
+                <div class="form-group" id="destination-select-group" style="display: none;">
+                    <label for="destination-select">Choose Destination</label>
+                    <select id="destination-select" required
+                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                        <option value="" disabled selected>Select a place...</option>
+                        <!-- Options populated by JS -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-name">Full Name</label>
+                    <input type="text" id="book-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-email">Email Address</label>
+                    <input type="email" id="book-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-phone">Phone Number</label>
+                    <input type="tel" id="book-phone" required>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="button" class="btn btn-whatsapp-pill" onclick="sendToWhatsApp('modal')"
+                        style="flex: 1;">
+                        <i class="ph ph-whatsapp-logo" style="font-size: 1.5rem;"></i> WhatsApp
+                    </button>
+                    <button type="submit" class="btn btn-primary" style="flex: 2;">
+                        Proceed <i class="ph ph-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Details Modal -->
+    <div class="modal" id="details-modal">
+        <div class="modal-content details-content-wrapper">
+            <div class="modal-header">
+                <h3 class="modal-title" id="detail-title">Destination Name</h3>
+                <button class="modal-close" id="details-close"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="details-body">
+                <img src="" alt="" id="detail-img" class="details-img">
+                <div class="details-info">
+                    <p class="details-text" id="detail-desc"></p>
+                    <h4 class="details-subtitle">Culture & Experience</h4>
+                    <p class="details-text" id="detail-culture"></p>
+                    <div class="details-footer">
+                        <span class="details-price" id="detail-price"></span>
+                        <button class="btn btn-primary" id="detail-book-btn">Book This Trip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wizard Modal -->
+    <div class="modal" id="wizard-modal">
+        <div class="modal-content wizard-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Plan Your Perfect Trip</h3>
+                <button class="modal-close" id="wizard-close"><i class="ph ph-x"></i></button>
+            </div>
+
+            <div class="wizard-progress">
+                <div class="progress-bar" id="wizard-progress"></div>
+            </div>
+
+            <form id="wizard-form">
+                <!-- Step 1: Vibe -->
+                <div class="wizard-step active-step" data-step="1">
+                    <h4 class="step-title">What's your travel vibe?</h4>
+                    <div class="wizard-options">
+                        <label class="wizard-option">
+                            <input type="radio" name="vibe" value="Relaxation" required>
+                            <span class="option-content">
+                                <i class="ph ph-armchair"></i>
+                                <span>Relaxation</span>
+                            </span>
+                        </label>
+                        <label class="wizard-option">
+                            <input type="radio" name="vibe" value="Adventure">
+                            <span class="option-content">
+                                <i class="ph ph-compass"></i>
+                                <span>Adventure</span>
+                            </span>
+                        </label>
+                        <label class="wizard-option">
+                            <input type="radio" name="vibe" value="Culture">
+                            <span class="option-content">
+                                <i class="ph ph-globe-hemisphere-west"></i>
+                                <span>Culture</span>
+                            </span>
+                        </label>
+                        <label class="wizard-option">
+                            <input type="radio" name="vibe" value="Luxury">
+                            <span class="option-content">
+                                <i class="ph ph-diamond"></i>
+                                <span>Luxury</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 2: Budget -->
+                <div class="wizard-step" data-step="2">
+                    <h4 class="step-title">What is your approximate budget?</h4>
+                    <div class="wizard-options">
+                        <label class="wizard-option">
+                            <input type="radio" name="budget" value="Budget" required>
+                            <span class="option-content">
+                                <span>💰 Economy</span>
+                            </span>
+                        </label>
+                        <label class="wizard-option">
+                            <input type="radio" name="budget" value="Comfort">
+                            <span class="option-content">
+                                <span>💰💰 Comfort</span>
+                            </span>
+                        </label>
+                        <label class="wizard-option">
+                            <input type="radio" name="budget" value="Luxury">
+                            <span class="option-content">
+                                <span>💰💰💰 Premium</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 3: Details -->
+                <div class="wizard-step" data-step="3">
+                    <h4 class="step-title">Almost there! Who are we speaking with?</h4>
+                    <div class="form-group">
+                        <input type="text" id="wizard-name" placeholder="Your Name" required class="wizard-input">
+                    </div>
+                    <!-- Added a fun summary text that updates dynamically -->
+                    <p id="wizard-summary" style="margin-top: 1rem; color: var(--first-color); font-style: italic;"></p>
+                </div>
+
+                <div class="wizard-footer">
+                    <button type="button" class="btn btn-secondary" id="prev-btn" style="display: none;">Back</button>
+                    <button type="button" class="btn btn-primary" id="next-btn">Next <i
+                            class="ph ph-caret-right"></i></button>
+                    <button type="submit" class="btn btn-primary" id="finish-btn"
+                        style="display: none; background: linear-gradient(135deg, #6366f1, #8b5cf6); border: none;">
+                        Generate Plan <i class="ph ph-sparkle"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll Up -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ph ph-arrow-up"></i>
+    </a>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/918655874294?text=Hi%20Skye%20Travel,%20I%20would%20like%20to%20plan%20a%20trip."
+        class="whatsapp-float" target="_blank">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+    <!--==================== ITINERARY MODAL (AI RESULT) ====================-->
+    <div class="modal" id="itinerary-modal">
+        <div class="modal-content wizard-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3 class="section-title" style="font-size: 1.5rem; text-align: left;">Your AI Plan</h3>
+                <i class="ph ph-x modal-close" id="itinerary-close"></i>
+            </div>
+
+            <div id="itinerary-loading" style="text-align: center; padding: 2rem;">
+                <div class="loader" style="font-size: 3rem; margin-bottom: 1rem; animation: spin 2s linear infinite;">✨
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Designing your Dream Trip...</h3>
+                <p style="color: #666;">Analyzing your vibe and budget preferences.</p>
+            </div>
+
+            <div id="itinerary-result" style="display: none;">
+                <!-- Dynamic Content injected here -->
+            </div>
+
+            <div id="itinerary-actions" style="margin-top: 2rem; display: none; gap: 1rem;">
+                <button class="btn btn-secondary" id="regen-btn" style="flex: 1;">Try Again</button>
+                <button class="btn btn-primary" id="book-itinerary-btn" style="flex: 1;">Book This Trip</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

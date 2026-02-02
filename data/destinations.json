@@ -1,0 +1,1192 @@
+[
+  {
+    "title": "Taj Mahal, India",
+    "price": "₹15,000",
+    "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2071&auto=format&fit=crop",
+    "rating": 5,
+    "description": "The Taj Mahal in Agra is an ivory-white marble mausoleum on the right bank of the river Yamuna. It is a UNESCO World Heritage Site and one of the 7 Wonders of the World.",
+    "culture": "Experience the rich Mughal history, intricate architecture, and the eternal symbol of love.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1776&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1771&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1585506942812-e72b29bac584?q=80&w=1925&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "Agra Fort",
+        "image": "https://images.unsplash.com/photo-1598322971842-c2cb0715694c?q=80&w=1932&auto=format&fit=crop"
+      },
+      {
+        "name": "Fatehpur Sikri",
+        "image": "https://images.unsplash.com/photo-1621345638848-0d198305908e?q=80&w=1925&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Goa Beaches, India",
+    "price": "₹25,000",
+    "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Goa is famous for its pristine beaches, vibrant nightlife, and Portuguese heritage. It offers a perfect blend of relaxation and adventure.",
+    "culture": "Enjoy Goan cuisine like vindaloo, visit historic churches, and relax at beach shacks.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1545167622-3a6ac156f427?q=80&w=2072&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1579607624683-af6414704832?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "Dudhsagar Falls",
+        "image": "https://images.unsplash.com/photo-1544473244-f6dc23565147?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Fort Aguada",
+        "image": "https://images.unsplash.com/photo-1605658661601-522194d2320b?q=80&w=2071&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Jaipur, India",
+    "price": "₹20,000",
+    "image": "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Jaipur, the Pink City, is known for its stunning palaces, forts, and vibrant markets. Visit the Hawa Mahal, Amber Fort, and City Palace.",
+    "culture": "Immerse in Rajasthani folk music, Kathputli puppetry, and royal hospitality.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1927&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1603262110263-fb011277db1e?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1557083049-74d1565fe95f?q=80&w=1974&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "Amber Fort",
+        "image": "https://images.unsplash.com/photo-1582260641151-5bd6d5c643bf?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Nahargarh Fort",
+        "image": "https://images.unsplash.com/photo-1593012908861-c8a77d7301c2?q=80&w=2070&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Kerala Backwaters, India",
+    "price": "₹35,000",
+    "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop",
+    "rating": 5,
+    "description": "Cruise through the tranquil backwaters of Alleppey in a traditional houseboat. Kerala is known as 'God's Own Country' for its lush greenery.",
+    "culture": "Experience Ayurveda, Kathakali dance, and delicious coconut-based cuisine.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Varanasi, India",
+    "price": "₹18,000",
+    "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2076&auto=format&fit=crop",
+    "rating": 4.7,
+    "description": "Varanasi is one of the oldest living cities in the world. The Ghats of the Ganges River offer a spiritual and mesmerizing experience.",
+    "culture": "Witness the evening Ganga Aarti, explore narrow alleys, and experience deep spirituality.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2076&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2076&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Ladakh, India",
+    "price": "₹45,000",
+    "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2074&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Ladakh offers breathtaking landscapes with stark mountains and blue lakes like Pangong Tso. A paradise for bikers and adventure lovers.",
+    "culture": "Discover Tibetan Buddhist monasteries (Gompas) and the unique Ladakhi lifestyle.",
+    "category": "Hiking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2074&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2074&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Udaipur, India",
+    "price": "₹28,000",
+    "image": "https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Udaipur, the City of Lakes, is famous for its lavish royal residences. The Lake Palace, located in the middle of Lake Pichola, is a sight to behold.",
+    "culture": "Experience the grandeur of Rajputana history and romantic boat rides.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Andaman Islands, India",
+    "price": "₹60,000",
+    "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "The Andaman Islands afford exotic beaches, crystal clear waters, and vibrant coral reefs. Radhanagar Beach is often voted one of the best in Asia.",
+    "culture": "Enjoy water sports, seafood, and the untouched beauty of tropical islands.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Rishikesh, India",
+    "price": "₹15,000",
+    "image": "https://images.unsplash.com/photo-1596021688661-3440cc0c11d9?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Rishikesh is the Yoga Capital of the World, situated beside the Ganges River. It is famous for yoga ashrams, suspension bridges, and river rafting.",
+    "culture": "Participate in yoga retreats, meditation, and the spiritual energy of the Himalayas.",
+    "category": "Hiking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1596021688661-3440cc0c11d9?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1596021688661-3440cc0c11d9?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Hampi, India",
+    "price": "₹18,000",
+    "image": "https://images.unsplash.com/photo-1600100598977-1e36e3a47c21?q=80&w=2071&auto=format&fit=crop",
+    "rating": 4.7,
+    "description": "Hampi is a UNESCO World Heritage site known for its ancient temples and ruins of the Vijayanagara Empire. The landscape is dotted with massive boulders.",
+    "culture": "Explore the history of a lost empire, ancient architecture, and hippie vibes.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600100598977-1e36e3a47c21?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1600100598977-1e36e3a47c21?q=80&w=2071&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Paris, France",
+    "price": "₹120,000",
+    "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Paris, the City of Light, offers the Eiffel Tower, Louvre Museum, and charming cafes. It is a global center for art, fashion, and culture.",
+    "culture": "Enjoy French cuisine, world-class art, and romantic walks along the Seine.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "London, UK",
+    "price": "₹130,000",
+    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "London is a 21st-century city with history stretching back to Roman times. Key sights include Big Ben, the Tower of London, and Buckingham Palace.",
+    "culture": "Experience British royalty, pubs, West End theatre, and diverse history.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Rome, Italy",
+    "price": "₹115,000",
+    "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Rome, the Eternal City, showcases nearly 3,000 years of art, architecture, and culture. The Colosseum and Vatican City are must-visits.",
+    "culture": "Indulge in pasta, pizza, history, and the dolce vita lifestyle.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Barcelona, Spain",
+    "price": "₹110,000",
+    "image": "https://images.unsplash.com/photo-1583422409516-2895a77efded?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and architecture, especially Gaudí’s Sagrada Família.",
+    "culture": "Enjoy tapas, flamenco, and the unique Catalan modernist architecture.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1583422409516-2895a77efded?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1583422409516-2895a77efded?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Amsterdam, Netherlands",
+    "price": "₹118,000",
+    "image": "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Amsterdam is known for its artistic heritage, elaborate canal system and narrow houses with gabled facades. Cycling is a way of life here.",
+    "culture": "Explore canals, museums (Van Gogh), and a relaxed, liberal atmosphere.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Prague, Czech Republic",
+    "price": "₹95,000",
+    "image": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.7,
+    "description": "Prague, 'the City of a Hundred Spires,' is known for its Old Town Square with colorful baroque buildings and the medieval Astronomical Clock.",
+    "culture": "Enjoy beer culture, gothic architecture, and historic bridges.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Vienna, Austria",
+    "price": "₹105,000",
+    "image": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?q=80&w=2072&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Vienna lies on the Danube River. Its artistic and intellectual legacy was shaped by residents including Mozart, Beethoven and Sigmund Freud.",
+    "culture": "Experience coffee house culture, classical music, and imperial palaces.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1516550893923-42d28e5677af?q=80&w=2072&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?q=80&w=2072&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Zurich, Switzerland",
+    "price": "₹160,000",
+    "image": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Zurich is a global center for banking and finance, situated at the north end of Lake Zurich in northern Switzerland. It offers luxury and nature.",
+    "culture": "Enjoy Swiss precision, chocolates, luxury shopping, and alpine views.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Athens, Greece",
+    "price": "₹100,000",
+    "image": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Athens is the capital of Greece. It was also at the heart of Ancient Greece, a powerful civilization and empire. The Acropolis is iconic.",
+    "culture": "Explore ancient history, philosophy, and vibrant Mediterranean street life.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Lisbon, Portugal",
+    "price": "₹98,000",
+    "image": "https://images.unsplash.com/photo-1590786961474-cda3dba98730?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Lisbon consists of pastel-colored buildings, an estuary and a suspension bridge. It is known for its cafe culture and soulful Fado music.",
+    "culture": "Enjoy fresh seafood, yellow trams, and stunning coastal views.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1590786961474-cda3dba98730?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1590786961474-cda3dba98730?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Bali, Indonesia",
+    "price": "₹75,000",
+    "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1938&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Bali offers picturesque beaches, spiritual energy, and terraced rice fields. Known as the 'Island of the Gods'.",
+    "culture": "Experience spiritual offerings, traditional dance, and surfing.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1938&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1938&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Phuket, Thailand",
+    "price": "₹55,000",
+    "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop",
+    "rating": 4.7,
+    "description": "Phuket is a rainforested, mountainous island in the Andaman Sea, with some of Thailand’s most popular beaches and high-end seaside resorts.",
+    "culture": "Enjoy Thai massage, street food, nightlife, and island hopping.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Tokyo, Japan",
+    "price": "₹140,000",
+    "image": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Tokyo, Japan’s bustling capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples.",
+    "culture": "Experience Anime, Sushi, technology, and Shinto shrines.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Kyoto, Japan",
+    "price": "₹135,000",
+    "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop",
+    "rating": 5,
+    "description": "Kyoto is famous for its classical Buddhist temples, gardens, imperial palaces, Shinto shrines and traditional wooden houses.",
+    "culture": "Immerse in Geisha culture, tea ceremonies, and zen gardens.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Seoul, South Korea",
+    "price": "₹125,000",
+    "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Seoul is a huge metropolis where modern skyscrapers, high-tech subways and pop culture meet Buddhist temples, palaces and street markets.",
+    "culture": "Enjoy K-Pop, Korean BBQ, skincare, and royal palaces.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1538485399081-7191377e8241?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Singapore",
+    "price": "₹85,000",
+    "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Singapore is an island city-state off southern Malaysia. It's a global financial center with a tropical climate and multicultural population.",
+    "culture": "Experience Gardens by the Bay, diverse street food, and cleanliness.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=2071&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Dubai, UAE",
+    "price": "₹70,000",
+    "image": "https://images.unsplash.com/photo-1512453979798-5ea936a7d481?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Dubai is known for luxury shopping, ultramodern architecture and a lively nightlife scene. Burj Khalifa dominates the skyscraper-filled skyline.",
+    "culture": "Experience desert safaris, luxury malls, and futuristic architecture.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1512453979798-5ea936a7d481?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1512453979798-5ea936a7d481?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Maldives",
+    "price": "₹95,000",
+    "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1965&auto=format&fit=crop",
+    "rating": 5,
+    "description": "The Maldives is a tropical nation in the Indian Ocean known for its beaches, blue lagoons and extensive reefs.",
+    "culture": "Relax in overwater villas, enjoy marine life, and total privacy.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1965&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1965&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Hanoi, Vietnam",
+    "price": "₹45,000",
+    "image": "https://images.unsplash.com/photo-1552353617-3bfd679b3bdd?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.7,
+    "description": "Hanoi, the capital of Vietnam, is known for its centuries-old architecture and a rich culture with Southeast Asian, Chinese and French influences.",
+    "culture": "Taste Pho and Banh Mi, visit ancient temples, and enjoy chaotic charm.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1552353617-3bfd679b3bdd?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1552353617-3bfd679b3bdd?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Hong Kong",
+    "price": "₹90,000",
+    "image": "https://images.unsplash.com/photo-1506318137071-a8bcbf6755dd?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Hong Kong is a major global financial hub and former British colony in southeastern China. It is famous for its tower-studded skyline.",
+    "culture": "Enjoy Dim Sum, vibrant markets, and the fusion of East and West.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1506318137071-a8bcbf6755dd?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1506318137071-a8bcbf6755dd?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "New York City, USA",
+    "price": "₹150,000",
+    "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. It is a global center of finance and culture.",
+    "culture": "Visit Times Square, Broadway, Central Park, and eat pizza/bagels.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Los Angeles, USA",
+    "price": "₹155,000",
+    "image": "https://images.unsplash.com/photo-1534190760961-74e8c7c53d44?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry.",
+    "culture": "Experience Hollywood, beaches like Santa Monica, and celebrity culture.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1534190760961-74e8c7c53d44?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1534190760961-74e8c7c53d44?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Cancun, Mexico",
+    "price": "₹130,000",
+    "image": "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Cancún, a Mexican city on the Yucatán Peninsula bordering the Caribbean Sea, is known for its beaches, numerous resorts and nightlife.",
+    "culture": "Enjoy Mayan ruins (Chichen Itza), tacos, and turquoise waters.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Rio de Janeiro, Brazil",
+    "price": "₹145,000",
+    "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Rio de Janeiro is a huge seaside city in Brazil, famed for its Copacabana and Ipanema beaches and 38m Christ the Redeemer statue.",
+    "culture": "Experience Carnival, Samba, football, and breathtaking scenery.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Machu Picchu, Peru",
+    "price": "₹160,000",
+    "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2070&auto=format&fit=crop",
+    "rating": 5,
+    "description": "Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley.",
+    "culture": "Hike the Inca Trail, explore ancient history, and meet llamas.",
+    "category": "Hiking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Banff, Canada",
+    "price": "₹140,000",
+    "image": "https://images.unsplash.com/photo-1533475150824-343118546e16?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Banff is a resort town in the province of Alberta, located within Banff National Park. The peaks of Mt. Rundle and Mt. Cascade dominate its skyline.",
+    "culture": "Experience the Rockies, turquoise lakes (Louise), and wildlife.",
+    "category": "Wildlife",
+    "gallery": [
+      "https://images.unsplash.com/photo-1533475150824-343118546e16?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1533475150824-343118546e16?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Hawaii, USA",
+    "price": "₹180,000",
+    "image": "https://images.unsplash.com/photo-1542259659439-429fee4cb183?q=80&w=2070&auto=format&fit=crop",
+    "rating": 5,
+    "description": "Hawaii is a state of the USA in the Pacific Ocean. It is an archipelago of 8 major islands, known for its rugged landscapes of cliffs and waterfalls.",
+    "culture": "Learn Hula, surf huge waves, and embrace the Aloha spirit.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1542259659439-429fee4cb183?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1542259659439-429fee4cb183?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Costa Rica",
+    "price": "₹125,000",
+    "image": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Costa Rica is a rugged, rainforested Central American country with coastlines on the Caribbean and Pacific. It is known for its beaches and biodiversity.",
+    "culture": "Live the Pura Vida lifestyle, see sloths, and zip-line through jungles.",
+    "category": "Wildlife",
+    "gallery": [
+      "https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Las Vegas, USA",
+    "price": "₹135,000",
+    "image": "https://images.unsplash.com/photo-1581351123004-757df0724431?q=80&w=2159&auto=format&fit=crop",
+    "rating": 4.7,
+    "description": "Las Vegas, in Nevada’s Mojave Desert, is a resort city famed for its vibrant nightlife, centered around 24-hour casinos and other entertainment options.",
+    "culture": "Enjoy world-class shows, gambling, and spectacular hotels.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1581351123004-757df0724431?q=80&w=2159&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1581351123004-757df0724431?q=80&w=2159&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Buenos Aires, Argentina",
+    "price": "₹130,000",
+    "image": "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=1935&auto=format&fit=crop",
+    "rating": 4.7,
+    "description": "Buenos Aires is Argentina’s big, cosmopolitan capital city. Its center is the Plaza de Mayo, lined with stately 19th-century buildings.",
+    "culture": "Experience Tango, steak dinners, and European-style architecture.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=1935&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=1935&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Cape Town, South Africa",
+    "price": "₹100,000",
+    "image": "https://images.unsplash.com/photo-1580060839134-757df0724431?q=80&w=2071&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Cape Town is a port city on South Africa’s southwest coast, on a peninsula beneath the imposing Table Mountain.",
+    "culture": "Visit Table Mountain, penguins at Boulders Beach, and wineries.",
+    "category": "Wildlife",
+    "gallery": [
+      "https://images.unsplash.com/photo-1580060839134-757df0724431?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1580060839134-757df0724431?q=80&w=2071&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Cairo, Egypt",
+    "price": "₹80,000",
+    "image": "https://images.unsplash.com/photo-1572252009289-9b50593d1794?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Cairo, Egypt’s sprawling capital, is set on the Nile River. At its heart is Tahrir Square and the vast Egyptian Museum.",
+    "culture": "See the Pyramids of Giza, the Sphinx, and ancient history.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1572252009289-9b50593d1794?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1572252009289-9b50593d1794?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Marrakech, Morocco",
+    "price": "₹90,000",
+    "image": "https://images.unsplash.com/photo-1597212720444-24587db37554?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Marrakech, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens.",
+    "culture": "Get lost in the Medina souks, stay in a Riad, and drink mint tea.",
+    "category": "Walking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1597212720444-24587db37554?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1597212720444-24587db37554?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Masai Mara, Kenya",
+    "price": "₹150,000",
+    "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop",
+    "rating": 5,
+    "description": "Masai Mara National Reserve is one of the most famous and popular wildlife conservation areas in Africa, known for the Great Migration.",
+    "culture": "Go on a Big 5 Safari and meet the Maasai people.",
+    "category": "Wildlife",
+    "gallery": [
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Seychelles",
+    "price": "₹140,000",
+    "image": "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=2034&auto=format&fit=crop",
+    "rating": 5,
+    "description": "The Seychelles is an archipelago of 115 islands in the Indian Ocean, off East Africa. It's home to rare animals such as giant Aldabra tortoises.",
+    "culture": "Enjoy exclusive luxury, granite boulders, and white sand beaches.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1590523741831-ab7f852f3278?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1534567201777-62846460b54e?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?q=80&w=2153&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "La Digue",
+        "image": "https://images.unsplash.com/photo-1590523278191-2dc04aeb53c4?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Praslin National Park",
+        "image": "https://images.unsplash.com/photo-1601666879133-72252c423ba2?q=80&w=2070&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Sydney, Australia",
+    "price": "₹140,000",
+    "image": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=2070&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harbourfront Sydney Opera House.",
+    "culture": "See the Opera House, Bondi Beach, and enjoy the laid-back Aussie vibe.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Queenstown, New Zealand",
+    "price": "₹150,000",
+    "image": "https://images.unsplash.com/photo-1507699622177-388898d99032?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.9,
+    "description": "Queenstown, New Zealand, sits on the shores of the South Island’s Lake Wakatipu, set against the dramatic Southern Alps.",
+    "culture": "Try bungee jumping, skiing, and see Middle-earth landscapes.",
+    "category": "Hiking",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507699622177-388898d99032?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1507699622177-388898d99032?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Bora Bora, French Polynesia",
+    "price": "₹250,000",
+    "image": "https://images.unsplash.com/photo-1533475150824-343118546e16?q=80&w=2070&auto=format&fit=crop",
+    "rating": 5,
+    "description": "Bora Bora is a small South Pacific island northwest of Tahiti in French Polynesia, surrounded by sand-fringed motus and a turquoise lagoon.",
+    "culture": "The ultimate luxury honeymoon destination with crystal clear water.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1533475150824-343118546e16?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1533475150824-343118546e16?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Fiji",
+    "price": "₹130,000",
+    "image": "https://images.unsplash.com/photo-1544473244-f6dc23565147?q=80&w=1974&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Fiji, a country in the South Pacific, is an archipelago of more than 300 islands. It's famed for rugged landscapes, palm-lined beaches and coral reefs.",
+    "culture": "Experience the warmest hospitality, Bula spirit, and kava ceremonies.",
+    "category": "Cruises",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544473244-f6dc23565147?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1544473244-f6dc23565147?q=80&w=1974&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    "title": "Melbourne, Australia",
+    "price": "₹135,000",
+    "image": "https://images.unsplash.com/photo-1514395462725-fb4566216143?q=80&w=2071&auto=format&fit=crop",
+    "rating": 4.8,
+    "description": "Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development.",
+    "culture": "Enjoy coffee culture, street art, cricket, and cultural festivals.",
+    "category": "Airbirds",
+    "gallery": [
+      "https://images.unsplash.com/photo-1514395462725-fb4566216143?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "nearby": [
+      {
+        "name": "City Center",
+        "image": "https://images.unsplash.com/photo-1514395462725-fb4566216143?q=80&w=2071&auto=format&fit=crop"
+      },
+      {
+        "name": "Cultural Heritage Site",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1887&auto=format&fit=crop"
+      }
+    ]
+  }
+]

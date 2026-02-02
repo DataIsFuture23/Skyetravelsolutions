@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details | Skye Travel Solutions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetalert-theme.js"></script>
+    <style>
+        /* Details Page Specific Styles */
+        .details-hero {
+            height: 70vh;
+            /* Taller hero */
+            position: relative;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .details-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            animation: zoomSlow 20s infinite alternate;
+            /* Subtle move */
+        }
+
+        @keyframes zoomSlow {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        .details-hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 4rem 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            animation: fadeUp 1s ease-out forwards 0.5s;
+        }
+
+        .details-title {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: -1px;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header-left {
+            text-align: left;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 1s ease-out forwards 0.8s;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 4px;
+            /* Slight radius */
+            transition: transform 0.4s, box-shadow 0.4s;
+            cursor: pointer;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        /* Nearby Places */
+        .nearby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .nearby-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .nearby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .nearby-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .nearby-title {
+            padding: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--title-color);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Booking Bar Glassmorphism */
+        .booking-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            animation: slideUp 0.8s ease-out forwards 1.2s;
+            opacity: 0;
+            /* Starts hidden for animation */
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            color: var(--first-color);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Loading */
+        #loading {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--first-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header" id="header"
+        style="background-color: var(--body-color); box-shadow: 0 1px 4px rgba(0, 0, 0, .1);">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Skye<span class="logo-accent">Travel</span> Solutions.</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html#destinations" class="nav-link">Back to Destinations</a>
+                    </li>
+                </ul>
+                <div class="nav-close" id="nav-close"><i class="ph ph-x"></i></div>
+            </div>
+            <div class="nav-btns">
+                <div class="nav-toggle" id="nav-toggle"><i class="ph ph-list"></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="loading">Loading Destination...</div>
+
+    <main class="main" id="details-content" style="display: none;">
+
+        <!-- Hero -->
+        <section class="details-hero">
+            <img src="" alt="" id="hero-img" class="details-hero-img">
+            <div class="details-hero-content">
+                <h1 id="hero-title" class="details-title">Destination Name</h1>
+                <div style="font-size: 1.2rem; color: #eee;" id="hero-rating">★★★★★ (4.8)</div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;">
+
+                <!-- Main Content -->
+                <div>
+                    <div class="section-header-left">
+                        <h2 class="section-title" style="text-align: left;">Overview</h2>
+                        <p id="desc-text" style="line-height: 1.8; color: var(--text-color); margin-bottom: 2rem;">
+                            Description goes here...
+                        </p>
+
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem;">
+                            Cultural Highlights</h3>
+                        <p id="culture-text" style="line-height: 1.8; color: var(--text-color);">
+                            Culture text...
+                        </p>
+                    </div>
+
+                    <!-- Gallery -->
+                    <h2 class="section-title" style="text-align: left; margin-top: 4rem;">Gallery</h2>
+                    <div class="gallery-grid" id="gallery-container">
+                        <!-- Populated via JS -->
+                    </div>
+
+                </div>
+
+                <!-- Related/Nearby Sidebar (Desktop) or stacked (Mobile) -->
+                <div>
+                    <h2 class="section-title" style="text-align: left;">Also Famous For</h2>
+                    <div class="nearby-grid" id="nearby-container" style="grid-template-columns: 1fr;">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Fixed Booking Bar -->
+    <div class="booking-bar" id="booking-bar" style="display: none;">
+        <div>
+            <div style="font-size: 0.9rem; color: #666;">Starting from</div>
+            <div class="price-tag" id="price-tag">₹0</div>
+        </div>
+        <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+    </div>
+
+    <!-- Re-use Booking Modal from Index -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Book your Trip</h3>
+                <button class="modal-close" id="modal-close"><i class="ph ph-x"></i></button>
+            </div>
+            <form class="modal-form"
+                onsubmit="event.preventDefault(); SkyeAlert.fire({ icon: 'success', title: 'Request Sent', text: 'Booking Request Sent!' });">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="book-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="book-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="book-phone" required>
+                </div>
+                <!-- WhatsApp Button Integrated -->
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button type="button" class="btn btn-whatsapp-pill" onclick="sendToWhatsApp('modal')"
+                        style="flex: 1;">
+                        <i class="ph ph-whatsapp-logo"></i> WhatsApp
+                    </button>
+                    <button type="submit" class="btn btn-primary" style="flex: 2;">
+                        Confirm Inquiry
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Inline JS for standalone page logic
+
+        // 1. Smart API Base URL Detection (Matches script.js)
+        const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const destId = urlParams.get('id');
+
+        // 2. Consolidated Offline Data (Matches script.js)
+        const OFFLINE_DESTINATIONS = [
+            // INDIA (IDs 1-10)
+            {
+                id: '1', title: 'Taj Mahal, India',
+                image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹15,000', rating: 4.9, category: 'Heritage',
+                description: 'The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, India. It was commissioned in 1632 by the Mughal emperor Shah Jahan.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Agra Fort', image: 'https://images.unsplash.com/photo-1598324789736-4861f89564a0?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Mehtab Bagh', image: 'https://images.unsplash.com/photo-1524613032530-449a5d94c285?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '2', title: 'Goa Beaches, India',
+                image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹20,000', rating: 4.7, category: 'Beaches',
+                description: 'Goa is a state on the southwestern coast of India known for its beautiful beaches, stellar nightlife, and Portuguese heritage.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1544256671-8bc480352b2f?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1588721666994-e8b915002447?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Calangute Beach', image: 'https://images.unsplash.com/photo-1596792661853-c247732a3962?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Fort Aguada', image: 'https://images.unsplash.com/photo-1621376666874-51e447990c29?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '3', title: 'Jaipur, India',
+                image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹18,000', rating: 4.8, category: 'Heritage',
+                description: 'Jaipur is the capital of India’s Rajasthan state. It evokes the royal family that once ruled the region and that, in 1727, founded what is now called the Old City.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1603262110263-fb0116e45da5?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1561033282-3d7ca9650041?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Hawa Mahal', image: 'https://images.unsplash.com/photo-1592639296346-60991cc3690d?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Amber Palace', image: 'https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '4', title: 'Kerala Backwaters, India',
+                image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹22,000', rating: 4.9, category: 'Nature',
+                description: 'The Kerala backwaters are a network of brackish lagoons and lakes lying parallel to the Arabian Sea coast of Kerala state in southern India.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1593693397690-362cb7966e53?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Alleppey Houseboats', image: 'https://images.unsplash.com/photo-1593693397690-362cb7966e53?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Kumarakom', image: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '5', title: 'Varanasi, India',
+                image: 'https://images.unsplash.com/photo-1561361513-35bd30f25c77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹12,000', rating: 4.7, category: 'Spiritual',
+                description: 'Varanasi is a city in the northern Indian state of Uttar Pradesh dating to the 11th century B.C. Regarded as the spiritual capital of India.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1561361513-35bd30f25c77?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1598007421731-096f9c9b56f8?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Ganga Ghats', image: 'https://images.unsplash.com/photo-1571597438372-475a963b6522?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Kashi Vishwanath Temple', image: 'https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '6', title: 'Ladakh, India',
+                image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹25,000', rating: 4.8, category: 'Adventure',
+                description: 'Ladakh is a region administered by India as a union territory, situated in the Himalayas. It is known for its remote mountain beauty and culture.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Pangong Lake', image: 'https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Nubra Valley', image: 'https://images.unsplash.com/photo-1549419130-9b62635904d6?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '7', title: 'Udaipur, India',
+                image: 'https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹20,000', rating: 4.8, category: 'Heritage',
+                description: 'Udaipur, formerly the capital of the Mewar Kingdom, is a city in the western Indian state of Rajasthan. Founded by Maharana Udai Singh II in 1559.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1590766940554-634a7ed01476?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1622308644420-7e1a3bc42cd0?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'City Palace', image: 'https://images.unsplash.com/photo-1590766940554-634a7ed01476?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Lake Pichola', image: 'https://images.unsplash.com/photo-1595147389795-360c41031c25?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '8', title: 'Andaman Islands, India',
+                image: 'https://images.unsplash.com/photo-1550296767-f7adba0c5fb1?auto=format&fit=crop&w=1600&q=80',
+                price: '₹35,000', rating: 4.9, category: 'Beaches',
+                description: 'The Andaman Islands are an Indian archipelago in the Bay of Bengal. These roughly 300 islands are known for their palm-lined, white-sand beaches.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1589330273594-fade1ee91647?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1627546682664-98402d083b9b?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Radhanagar Beach', image: 'https://images.unsplash.com/photo-1544983053-j3827612f022?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Havelock Island', image: 'https://images.unsplash.com/photo-1596541223945-81498b94871d?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '9', title: 'Rishikesh, India',
+                image: 'https://images.unsplash.com/photo-1563297690-5588e9b6c0bc?auto=format&fit=crop&w=1600&q=80',
+                price: '₹10,000', rating: 4.6, category: 'Adventure',
+                description: 'Rishikesh is a city in India’s northern state of Uttarakhand, in the Himalayan foothills beside the Ganges River. The river is considered holy.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1598555986377-f27357494191?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1607406322960-9eace4a74797?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Ram Jhula', image: 'https://images.unsplash.com/photo-1579619176161-46abcc81859d?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'River Rafting', image: 'https://images.unsplash.com/photo-1612437645163-1268393e82d8?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+            {
+                id: '10', title: 'Hampi, India',
+                image: 'https://images.unsplash.com/photo-1620766165457-a8025baa82e0?auto=format&fit=crop&w=1600&q=80',
+                price: '₹14,000', rating: 4.7, category: 'Heritage',
+                description: 'Hampi is an ancient village in the south Indian state of Karnataka. It’s dotted with numerous ruined temple complexes from the Vijayanagara Empire.',
+                gallery: [
+                    'https://images.unsplash.com/photo-1600100598297-a29939e6ba23?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1590422144933-5cabe8207908?auto=format&fit=crop&w=800&q=80'
+                ],
+                nearby: [
+                    { name: 'Virupaksha Temple', image: 'https://images.unsplash.com/photo-1588523773172-8877b0682885?auto=format&fit=crop&w=400&q=60' },
+                    { name: 'Stone Chariot', image: 'https://images.unsplash.com/photo-1606216839356-83394747754d?auto=format&fit=crop&w=400&q=60' }
+                ]
+            },
+
+            // INTERNATIONAL (Legacy Support + Live IDs)
+            {
+                id: '35', title: 'Machu Picchu, Peru',
+                image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹95,000', rating: 4.9, category: 'Hiking',
+                description: 'Explore the ancient Incan citadel set high in the Andes Mountains.',
+                gallery: ['https://images.unsplash.com/photo-1526392060635-9d6019884377', 'https://images.unsplash.com/photo-1518182170546-07fb612d9c15'],
+                nearby: []
+            },
+            {
+                id: '27', title: 'Dubai, UAE',
+                image: 'https://images.unsplash.com/photo-1512453979798-5ea904ac66de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                price: '₹85,000', rating: 4.6, category: 'Luxury',
+                description: 'Marvel at futuristic architecture, luxury shopping, and lively nightlife.',
+                gallery: ['https://images.unsplash.com/photo-1523805009345-7448845a9e53', 'https://images.unsplash.com/photo-1518684079-3c830dcefacf'],
+                nearby: []
+            }
+        ];
+
+        async function loadDetails() {
+            if (!destId) {
+                // Determine if we should redirect or just show error
+                document.getElementById('loading').textContent = 'No destination ID provided.';
+                return;
+            }
+
+            try {
+                // Start with Offline Data
+                let all = OFFLINE_DESTINATIONS;
+
+                try {
+                    console.log(`Attempting to fetch from API: ${API_BASE}/api/destinations`);
+                    const response = await fetch(`${API_BASE}/api/destinations`);
+                    if (response.ok) {
+                        const onlineData = await response.json();
+                        if (onlineData && onlineData.length > 0) {
+                            all = onlineData;
+                            console.log("Using API Data", all);
+                        }
+                    }
+                } catch (e) {
+                    console.warn("API fetch failed/unreachable. Using offline data.", e);
+                }
+
+                // Collision Resolution Logic:
+                // If the incoming ID matches a Legacy (Offline) ID, we prioritize matching by Title.
+                // This handles the case where Legacy ID 2 = Machu Picchu, but Live ID 2 = Goa.
+                // If the user clicked a link generated from Offline Data (ID 2), they expect Machu Picchu.
+
+                let data = null;
+                const offlineMatch = OFFLINE_DESTINATIONS.find(d => String(d.id) === String(destId));
+
+                if (offlineMatch) {
+                    console.log(`Legacy ID ${destId} detected ("${offlineMatch.title}"). Prioritizing Title lookup...`);
+                    // Try to find the Legacy Title in the Online Data
+                    data = all.find(d => d.title === offlineMatch.title);
+                }
+
+                // If no legacy match or title lookup failed, fall back to standard ID/Slug lookup
+                if (!data) {
+                    data = all.find(d => String(d.id) === String(destId) || d.slug === destId || d.title === destId);
+                }
+
+                if (data) {
+                    renderPage(data);
+                } else {
+                    document.getElementById('loading').innerHTML = `
+                        <div style="text-align:center">
+                            <h3>Destination Not Found</h3>
+                            <p>We couldn't find the destination with ID: ${destId}</p>
+                            <a href="index.html" class="btn btn-primary" style="margin-top:1rem">Back to Home</a>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                console.error(err);
+                document.getElementById('loading').textContent = 'Error Loading Data.';
+            }
+        }
+
+        function renderPage(data) {
+            document.title = `${data.title} | Skye Travel`;
+
+            // Hero
+            const heroImg = document.getElementById('hero-img');
+            heroImg.src = data.image;
+            heroImg.onerror = function () { this.src = 'https://via.placeholder.com/1920x1080?text=Image+Not+Found'; };
+
+            document.getElementById('hero-title').textContent = data.title;
+            document.getElementById('hero-rating').textContent = `★ ${data.rating || '4.5'} Rating`;
+
+            // Content
+            document.getElementById('desc-text').textContent = data.description || "Experience the local traditions and rich history of this amazing destination.";
+            document.getElementById('culture-text').textContent = data.culture || "Immerse yourself in the vibrant local culture, unique cuisine, and historical landmarks.";
+
+            // Price
+            document.getElementById('price-tag').textContent = data.price;
+
+            // Gallery
+            const galleryContainer = document.getElementById('gallery-container');
+            galleryContainer.innerHTML = ''; // Clear existing
+
+            let galleryImages = data.gallery && data.gallery.length > 0 ? data.gallery : [];
+            let nearbyPlaces = data.nearby && data.nearby.length > 0 ? data.nearby : [];
+
+            // PATCH: If API data is empty, check our rich Offline Data for a match by Title
+            if (galleryImages.length === 0 || nearbyPlaces.length === 0) {
+                const offlineRef = OFFLINE_DESTINATIONS.find(d => d.title === data.title);
+                if (offlineRef) {
+                    console.log("Patching missing API data with Offline content for:", data.title);
+                    if (galleryImages.length === 0 && offlineRef.gallery) galleryImages = offlineRef.gallery;
+                    if (nearbyPlaces.length === 0 && offlineRef.nearby) nearbyPlaces = offlineRef.nearby;
+                }
+            }
+
+            // Fallback if STILL empty (use main image or generic)
+            if (galleryImages.length === 0) {
+                galleryImages = [data.image];
+            }
+
+            // Render Gallery
+            if (galleryImages.length > 0) {
+                galleryImages.forEach(img => {
+                    const imgEl = document.createElement('img');
+                    imgEl.src = img;
+                    imgEl.className = 'gallery-img';
+                    imgEl.onclick = () => window.open(img, '_blank');
+                    imgEl.onerror = function () { this.style.display = 'none'; };
+                    galleryContainer.appendChild(imgEl);
+                });
+            } else {
+                galleryContainer.innerHTML = '<p>No extra images available.</p>';
+            }
+
+            // Nearby (Mock data if missing or empty)
+            const nearbyContainer = document.getElementById('nearby-container');
+            nearbyContainer.innerHTML = '';
+
+            if (nearbyPlaces.length > 0) {
+                nearbyPlaces.forEach(place => {
+                    const card = document.createElement('div');
+                    card.className = 'nearby-card';
+                    card.style.cursor = 'pointer';
+                    // Make search query: "Destination Name Place Name"
+                    const searchQuery = encodeURIComponent(`${data.title} ${place.name}`);
+                    card.onclick = () => window.open(`https://www.google.com/search?q=${searchQuery}&tbm=isch`, '_blank');
+
+                    card.innerHTML = `
+                        <img src="${place.image}" class="nearby-img" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="nearby-title">${place.name} <i class="ph ph-arrow-square-out" style="font-size:0.8em; margin-left:4px;"></i></div>
+                    `;
+                    nearbyContainer.appendChild(card);
+                });
+            } else {
+                nearbyContainer.innerHTML = '<p style="color:var(--text-color-light)">No nearby places listed.</p>';
+            }
+
+            // Show Content
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('details-content').style.display = 'block';
+            document.getElementById('booking-bar').style.display = 'flex';
+        }
+
+        // WhatsApp Logic
+        window.sendToWhatsApp = function (context) {
+            const phoneNumber = "918655874294";
+            const dest = document.getElementById('hero-title').textContent;
+            const message = `Hi, I am interested in ${dest}. Can you send me more details?`;
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        const modal = document.getElementById('booking-modal');
+        window.openBookingModal = () => {
+            modal.classList.add('active-modal');
+        }
+        document.getElementById('modal-close').onclick = () => {
+            modal.classList.remove('active-modal');
+        }
+        window.onclick = (e) => {
+            if (e.target == modal) modal.classList.remove('active-modal');
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', loadDetails);
+
+    </script>
+</body>
+
+</html>

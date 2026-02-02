@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Skye Travel Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 3.5rem;
+        }
+
+        .service-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--first-color);
+        }
+
+        .service-item i {
+            transition: transform 0.4s ease;
+        }
+
+        .service-item:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .hotel-card {
+            background: #fff;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Skye<span class="logo-accent">Travel</span> Solutions.</a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link active-link">Our Service</a></li>
+                    <li class="nav-item"><a href="index.html#destinations" class="nav-link">Destinations</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="#" class="btn btn-primary nav-btn-book"
+                            onclick="openBooking('General Inquiry'); return false;"
+                            style="padding: 0.75rem 1.5rem; color: #fff;">Tour Booking Now</a></li>
+                </ul>
+                <div class="nav-close" id="nav-close"><i class="ph ph-x"></i></div>
+            </nav>
+            <div class="nav-btns">
+                <div class="nav-toggle" id="nav-toggle"><i class="ph ph-list"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div>
+            <h1 class="home-title" style="font-size: 3rem;">Our Services</h1>
+            <p class="home-description" style="max-width: 600px; margin: 0 auto;">We offer it Best</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="section container">
+            <h2 class="section-title">Discover your Destinations</h2>
+
+            <div class="service-list-grid">
+                <div class="service-item" onclick="window.openBooking('Service: Sea Farers', true)">
+                    <i class="ph ph-anchor"
+                        style="font-size: 3rem; color: var(--first-color); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Sea Farers</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Specialized travel solutions for maritime professionals.
+                    </p>
+                </div>
+                <div class="service-item" onclick="window.openBooking('Service: Groups & Families', true)">
+                    <i class="ph ph-users-three"
+                        style="font-size: 3rem; color: var(--first-color); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Groups & Families</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Memorable vacations tailored for families and large
+                        groups.</p>
+                </div>
+                <div class="service-item" onclick="window.openBooking('Service: Corporate Travel', true)">
+                    <i class="ph ph-buildings"
+                        style="font-size: 3rem; color: var(--first-color); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Corporate Travel</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Efficiency and comfort for business executives.</p>
+                </div>
+                <div class="service-item" onclick="window.openBooking('Service: SME Solutions', true)">
+                    <i class="ph ph-briefcase"
+                        style="font-size: 3rem; color: var(--first-color); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">SME Solutions</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Optimized travel plans for small and medium enterprises.
+                    </p>
+                </div>
+                <div class="service-item" onclick="window.openBooking('Service: Educational Tours', true)">
+                    <i class="ph ph-student"
+                        style="font-size: 3rem; color: var(--first-color); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Educational Tours</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Safe and educational trips for schools and universities.
+                    </p>
+                </div>
+                <div class="service-item" onclick="window.openBooking('Service: Webbings & Events', true)">
+                    <i class="ph ph-confetti"
+                        style="font-size: 3rem; color: var(--first-color); margin-bottom: 1rem; display: block;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Webbings & Events</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Handling logistics for destination weddings and events.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Amazing Travel Experience</h2>
+            <div class="destinations-grid">
+                <!-- Hotel 1 -->
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop"
+                        alt="The Plaza" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; font-family: var(--title-font);">The Plaza, New York</h3>
+                        <div style="color: #ffb700; font-size: 0.9rem; margin-bottom: 0.5rem;">★ 4.8 Rating</div>
+                        <h4 style="font-size: 1.1rem; color: var(--first-color); margin: 0.5rem 0;">₹80,000 <span
+                                style="font-size: 0.8rem; color: #666; font-weight: normal;">/Person</span></h4>
+                        <button class="btn btn-card" onclick="window.openBooking('The Plaza, New York')">Book
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop"
+                        alt="Ritz Paris" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; font-family: var(--title-font);">Hotel Ritz Paris</h3>
+                        <div style="color: #ffb700; font-size: 0.9rem; margin-bottom: 0.5rem;">★ 4.8 Rating</div>
+                        <h4 style="font-size: 1.1rem; color: var(--first-color); margin: 0.5rem 0;">₹79,000 <span
+                                style="font-size: 0.8rem; color: #666; font-weight: normal;">/Person</span></h4>
+                        <button class="btn btn-primary" onclick="window.openBooking('Hotel Ritz Paris')">Book
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
+                        alt="Claridge" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; font-family: var(--title-font);">Claridge’s, London</h3>
+                        <div style="color: #ffb700; font-size: 0.9rem; margin-bottom: 0.5rem;">★ 4.8 Rating</div>
+                        <h4 style="font-size: 1.1rem; color: var(--first-color); margin: 0.5rem 0;">₹78,000 <span
+                                style="font-size: 0.8rem; color: #666; font-weight: normal;">/Person</span></h4>
+                        <button class="btn btn-primary" onclick="window.openBooking('Claridges, London')">Book
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Hotel 4 -->
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1529290130-4cdf36e8adc3?q=80&w=2070&auto=format&fit=crop"
+                        alt="Taj Mahal Palace" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; font-family: var(--title-font);">Taj Mahal Palace, India</h3>
+                        <div style="color: #ffb700; font-size: 0.9rem; margin-bottom: 0.5rem;">★ 4.8 Rating</div>
+                        <h4 style="font-size: 1.1rem; color: var(--first-color); margin: 0.5rem 0;">₹76,000 <span
+                                style="font-size: 0.8rem; color: #666; font-weight: normal;">/Person</span></h4>
+                        <button class="btn btn-primary" onclick="window.openBooking('Taj Mahal Palace')">Book
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Hotel 5 -->
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
+                        alt="Beverly Hills" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; font-family: var(--title-font);">Beverly Hills Hotel</h3>
+                        <div style="color: #ffb700; font-size: 0.9rem; margin-bottom: 0.5rem;">★ 4.8 Rating</div>
+                        <h4 style="font-size: 1.1rem; color: var(--first-color); margin: 0.5rem 0;">₹77,500 <span
+                                style="font-size: 0.8rem; color: #666; font-weight: normal;">/Person</span></h4>
+                        <button class="btn btn-primary" onclick="window.openBooking('Beverly Hills Hotel')">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">Skye<span class="logo-accent">Travel</span> Solutions.</a>
+                <p class="footer-description">Your premium gateway to the world's most beautiful destinations.</p>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Our Service</a></li>
+                    <li><a href="contact.html">Tour Booking Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Address</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@skyetravelsolutions.com">info@skyetravelsolutions.com</a></li>
+                    <li>+91 86558 74294</li>
+                    <li>Mira Road East, Thane, India</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="footer-socials">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © Copyright © 2025 SKYE TRAVEL SOLUTIONS All Right Reserved. | Made With By e2s infotech - Web Designers in
+            Mumbai.
+        </div>
+    </footer>
+
+    <!-- Booking Modal (Shared) -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" style="display:none">Legacy Title</h3> <!-- Helper for old code if any -->
+                <h2 class="modal-title" id="booking-modal-title">Book your Trip to <span
+                        id="modal-destination-name"></span></h2>
+                <button class="modal-close" id="modal-close"><i class="ph ph-x"></i></button>
+            </div>
+
+            <form class="modal-form" id="booking-form">
+                <input type="hidden" id="book-destination"> <!-- Hidden field to store final destination -->
+
+                <!-- Destination Select (Visible only for General Inquiry) -->
+                <div class="form-group" id="destination-select-group" style="display: none;">
+                    <label for="destination-select">Choose Destination</label>
+                    <select id="destination-select"
+                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: #f8f9fa;">
+                        <option value="" disabled selected>Select a place...</option>
+                        <!-- Options populated by JS -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-name">Full Name</label>
+                    <input type="text" id="book-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-email">Email Address</label>
+                    <input type="email" id="book-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-phone">Phone Number</label>
+                    <input type="tel" id="book-phone" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Confirm Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal (Required for script.js to not crash) -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="ph ph-credit-card"></i> Secure Checkout</h3>
+                <button class="modal-close" id="payment-close"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="payment-summary"
+                style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <p style="display: flex; justify-content: space-between;"><strong>Total:</strong> <span id="pay-amount"
+                        style="color: var(--first-color); font-size: 1.2rem;">₹0</span></p>
+            </div>
+            <form id="payment-form" class="modal-form">
+                <input type="hidden" id="pay-booking-id">
+                <div class="form-group"><label>Card Number</label><input type="text" placeholder="0000 0000 0000 0000"
+                        maxlength="19" required></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM/YY" maxlength="5"
+                            required></div>
+                    <div class="form-group"><label>CVV</label><input type="password" placeholder="123" maxlength="3"
+                            required></div>
+                </div>
+                <div class="form-group"><label>Name on Card</label><input type="text" placeholder="JOHN DOE" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="btn-pay">Pay Now <i
+                        class="ph ph-lock-key"></i></button>
+            </form>
+            <div id="payment-feedback" style="text-align: center; margin-top: 10px; display: none;">
+                <i class="ph ph-spinner ph-spin" style="font-size: 2rem; color: var(--first-color);"></i>
+                <p>Processing...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
