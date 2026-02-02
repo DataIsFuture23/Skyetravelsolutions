@@ -20,10 +20,13 @@ A premium travel agency website featuring dynamic destinations, bookings, and in
     node server_local.js
     ```
 
-## ☁️ Deploy to Netlify
+## ☁️ Deploy via GitHub Pages (Recommended)
 
-This project is configured for **Zero-Install** static deployment on Netlify, ensuring a fast and warning-free build.
+Since this is a static site, the easiest way to host it for free is **GitHub Pages**.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/DataIsFuture23/Skyetravelsolutions)
+1.  Go to your repository **Settings** tab.
+2.  Click **Pages** (in the left sidebar).
+3.  Under **Branch**, select `main` and click **Save**.
+4.  Wait 1 minute, and your site will be live!
 
 **Note:** The "Login" and "Book Now" features require a backend database and will not function in this static deployment. The "View Details" and destination gallery will work normally via offline fallback.

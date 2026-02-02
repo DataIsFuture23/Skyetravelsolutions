@@ -1,9 +1,0 @@
-[build]
-  command = "echo 'Static Deployment - Skipping npm install'"
-  publish = "."
-
-# Ensure clean URLs and correct MIME types
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
