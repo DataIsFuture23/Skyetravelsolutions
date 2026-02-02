@@ -15,9 +15,7 @@
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "nodemailer": "^7.0.12"
-  },
-  "optionalDependencies": {
+    "nodemailer": "^7.0.12",
     "msnodesqlv8": "^5.1.3",
     "mssql": "^12.2.0",
     "sqlite3": "^5.1.7"
