@@ -535,8 +535,8 @@ if (bookingForm) {
             console.warn('Booking API Error. Attempting EmailJS Fallback...', error);
 
             // EmailJS Config (User to Update)
-            const serviceID = "YOUR_SERVICE_ID";
-            const templateID = "YOUR_TEMPLATE_ID";
+            const serviceID = "service_b9pp92i";
+            const templateID = "template_gmfiunr";
 
             try {
                 await emailjs.send(serviceID, templateID, {
@@ -1234,8 +1234,8 @@ if (contactForm) {
             console.warn("Contact API unreachable. Attempting EmailJS Fallback...");
 
             // EmailJS Config (User to Update)
-            const serviceID = "YOUR_SERVICE_ID";
-            const templateID = "YOUR_TEMPLATE_ID";
+            const serviceID = "service_b9pp92i";
+            const templateID = "template_gmfiunr";
 
             try {
                 await emailjs.send(serviceID, templateID, {
