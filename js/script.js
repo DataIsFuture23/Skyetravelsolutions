@@ -532,12 +532,41 @@ if (bookingForm) {
             }
 
         } catch (error) {
-            console.error('Booking Error:', error);
-            SkyeAlert.fire({
-                icon: 'error',
-                title: 'Submission Failed',
-                text: 'Sorry, there was an issue sending your request. Please try again.'
-            });
+            console.warn('Booking API Error. Attempting EmailJS Fallback...', error);
+
+            // EmailJS Config (User to Update)
+            const serviceID = "YOUR_SERVICE_ID";
+            const templateID = "YOUR_TEMPLATE_ID";
+
+            try {
+                await emailjs.send(serviceID, templateID, {
+                    destination: destination,
+                    from_name: name,
+                    from_email: email,
+                    phone: phone,
+                    message: isInquiryOnly ? 'General Inquiry' : 'Booking Request',
+                    reply_to: email
+                });
+
+                // SUCCESS (EmailJS)
+                bookingModal.classList.remove('active-modal');
+                bookingForm.reset();
+
+                if (isInquiryOnly) {
+                    SkyeAlert.fire({ icon: 'success', title: 'Inquiry Sent!', text: `Thank you, ${name}! Your inquiry has been sent.` });
+                } else {
+                    // Start Mock Payment
+                    openPaymentModal('OFFLINE-' + Date.now(), currentPrice);
+                }
+
+            } catch (emailErr) {
+                console.error('EmailJS Failed:', emailErr);
+                SkyeAlert.fire({
+                    icon: 'error',
+                    title: 'Submission Failed',
+                    text: 'Sorry, we could not process your request. Please try WhatsApp.'
+                });
+            }
         } finally {
             submitBtn.textContent = originalBtnText;
             submitBtn.disabled = false;
@@ -1202,14 +1231,33 @@ if (contactForm) {
             contactForm.reset();
 
         } catch (err) {
-            console.warn("Contact API unreachable, showing offline success.");
-            // Offline Success
-            SkyeAlert.fire({
-                icon: 'success',
-                title: 'Message Sent',
-                text: 'Thanks! (Demo Mode: Message simulated)'
-            });
-            contactForm.reset();
+            console.warn("Contact API unreachable. Attempting EmailJS Fallback...");
+
+            // EmailJS Config (User to Update)
+            const serviceID = "YOUR_SERVICE_ID";
+            const templateID = "YOUR_TEMPLATE_ID";
+
+            try {
+                await emailjs.send(serviceID, templateID, {
+                    from_name: data.name,
+                    from_email: data.email,
+                    phone: data.phone,
+                    message: data.message,
+                    reply_to: data.email
+                });
+
+                SkyeAlert.fire({ icon: 'success', title: 'Message Sent', text: 'Thank you! We have received your message.' });
+                contactForm.reset();
+
+            } catch (emailErr) {
+                console.error("EmailJS Failed:", emailErr);
+                SkyeAlert.fire({
+                    icon: 'warning',
+                    title: 'Message Saved Offline',
+                    text: 'We could not reach the server, but your message has been logged locally. Please contact us directly via WhatsApp.'
+                });
+            }
+
         } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
