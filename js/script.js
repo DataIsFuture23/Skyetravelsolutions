@@ -1321,3 +1321,8 @@ document.querySelectorAll('.modal-close, .modal-close-auth').forEach(btn => {
         registerModal.classList.remove('active-modal');
     });
 });
+
+// Initialize Video Slider
+document.addEventListener('DOMContentLoaded', () => {
+    initVideoSlider();
+});
